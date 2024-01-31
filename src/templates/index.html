@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&display=swap" rel="stylesheet">
+    <style>
+        body {
+            color:white;
+            background-image: url(https://www.5centscdn.net/wp-content/uploads/2022/09/Map-only-anim-1.gif);
+            background-size: cover;
+            background-position: center;
+        }
+        .ca{
+          box-shadow: 0 0 30px 5px #ffffff;
+        }
+        .ca:hover{
+          box-shadow: 0 0 30px 5px green;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid bg-dark">
+      <a
+      class="d-flex navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"
+        height=70
+        class="d-inline-block align-text-top"></a>
+      <button class="navbar-toggler"
+        type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div
+
+      class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mt-4 mb-lg-0">
+          <li class="nav-item">
+            <a
+            style="color:white;"
+            class="nav-link active" aria-current="page" href="{{ url_for('insights_view') }}">Insights</a>
+          </li>
+          <li class="nav-item">
+            <a
+            style="color:white;"
+            class="nav-link" href="{{ url_for('performance_view') }}">Performance</a>
+          </li>
+          <li class="nav-item">
+            <a
+            style="color:white;"
+            class="nav-link" href="{{ url_for('management_view') }}">Management</a>
+          </li>
+          <li class="nav-item">
+            <a
+            style="color:white;"
+            class="nav-link" href="{{ url_for('security_view') }}">Security</a>
+          </li>
+        </ul>
+        <form
+        class="d-flex ml-auto" role="search">
+          <input class="form-control mt-4 me-2 mx-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success mt-4" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  {% if route_name == 'index' %}
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <h1 style="color:white;font-family: 'Cute Font', sans-serif;letter-spacing:3px;font-size:60px;text-shadow: white 0 0 30px;"
+        class="mt-2">A Network optimizer for your Network</h1>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col d-flex justify-content-center mb-5">
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"
+          height=200
+          class="mt-3 d-inline-block align-text-top">
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center mt-3">
+        <div
+          style="width:70%;text-align:center;border-radius:20px"
+        class="d-flex justify-content-center ca">
+        <div class="card-body">
+          <p class="card-text">Strategic Capacity Planning: Insights into Traffic Patterns and Scalability,
+          nformed Capacity Planning Decisions, Improved Resource Allocation, and Enhanced Scalability</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center my-3">
+        <div
+          style="width:70%;text-align:center;border-radius:20px"
+        class="d-flex justify-content-center ca">
+        <div class="card-body">
+          <p class="card-text">Measuring Network Performance: Establishing Baseline Metrics and Benchmarking,
+          Defined Performance Metrics, Continuous Improvement, and Enhanced Network Management.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <div
+          style="width:70%;text-align:center;border-radius:20px"
+        class="d-flex justify-content-center ca">
+        <div class="card-body">
+          <p class="card-text">Navigating Network Challenges: Addressing Key Issues in Network Management,
+          Inefficient Network Traffic Management Leading to Bottlenecks.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center my-3 mb-5">
+        <div
+          style="width:70%;text-align:center;border-radius:20px"
+        class="d-flex justify-content-center ca">
+        <div class="card-body">
+          <p class="card-text">Securing Network Infrastructure: Mitigating Risks and Cyber Threats,
+          Strengthened Network Security, Reduced Risk of Unauthorized Access, and Enhanced Threat Visibility.</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col d-flex justify-content-center my-3 mb-5">
+        <div
+          style="width:70%;text-align:center;border-radius:20px"
+        class="d-flex justify-content-center">
+        <button
+        type="button" class="btn btn-outline-success btn-lg">Get Start Here</button>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% block content %}
+{% endblock %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Other JavaScript files -->
+</body>
+</html>
